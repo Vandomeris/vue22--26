@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { provide, ref } from 'vue';
+import type { Product } from './types';
+
+const cart = ref<Product[]>([])
+
+provide('cart', cart)
+
+</script>
 
 <template>
 
@@ -8,6 +16,8 @@
     <nav>
       <RouterLink to="/">Главная</RouterLink>
       <RouterLink to="/products">Товары</RouterLink>
+      <RouterLink to="/exchange">Обмен валют</RouterLink>
+      <RouterLink to="/cart">Корзина</RouterLink>
     </nav>
   </header>
 
