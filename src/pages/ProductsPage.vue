@@ -1,9 +1,10 @@
 <template>
-    <h1>Каталог товаров</h1>
-    <div class="products_grid">
-        <ProductCard v-if="!loading" v-for="product in products" :key="product.id" :product="product" />
-        <ElSkeleton v-else v-for="(_) in 10" :rows="5" />
-
+    <div>
+        <h1>Каталог товаров</h1>
+        <div class="products_grid">
+            <ProductCard v-if="!loading" v-for="product in products" :key="product.id" :product="product" />
+            <ElSkeleton v-else v-for="(_) in 10" :rows="5" />
+        </div>
     </div>
 
 

@@ -23,9 +23,9 @@ provide('cart', cart)
 
 
   <main>
-
-    <RouterView />
-
+    <Transition>
+      <RouterView />
+    </Transition>
   </main>
 
 

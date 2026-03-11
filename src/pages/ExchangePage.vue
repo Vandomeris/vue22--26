@@ -1,22 +1,19 @@
 <template>
-<h1>Обмен валют</h1>
+    <div>
+        <h1>Обмен валют</h1>
 
 
-<input v-model="rubles" type="number" placeholder="Сколько рублей" >
+        <input v-model="rubles" type="number" placeholder="Сколько рублей">
 
-<select v-model="currency">
+        <select v-model="currency">
 
-    <option 
-    v-if="kurs" 
-    v-for="(value, key) in kurs.rates" 
-    :key="key" 
-    :value="key"
-    >{{key}}</option>
+            <option v-if="kurs" v-for="(value, key) in kurs.rates" :key="key" :value="key">{{ key }}</option>
 
-</select>
+        </select>
+    </div>
 
 
-<span>{{ result }}</span>
+    <span>{{ result }}</span>
 
 
 </template>
@@ -38,10 +35,10 @@ onMounted(async () => {
 const rubles = ref(0)
 const currency = ref('usd')
 
-const result = computed(() =>  {
-    if(kurs.value){
+const result = computed(() => {
+    if (kurs.value) {
         return rubles.value * kurs.value.rates[currency.value]!
-    }else{
+    } else {
         return 0
     }
 })
