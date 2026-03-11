@@ -1,13 +1,16 @@
 <template>
-    <h1>Карточка товара</h1>
+    <div>
+        <h1>Карточка товара</h1>
 
-    <div v-if="product">
-        <p>{{ product.title }}</p>
-        <p>{{ product.price }}</p>
+        <div v-if="product">
+            <p>{{ product.title }}</p>
+            <p>{{ product.price }}</p>
+        </div>
+        <div v-else>
+            Loading........
+        </div>
     </div>
-    <div v-else>
-        Loading........
-    </div>
+
 
 </template>
 
